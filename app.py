@@ -1,15 +1,17 @@
 from flask import Flask, render_template, request, jsonify
+import json
+import os
 
 app = Flask(__name__)
 
-responses = {
-    "hi": "Hello! Welcome to Customer Service. How can I help you?",
-    "hello": "Hi! How can I assist you today?",
-    "order": "Please provide your Order ID.",
-    "refund": "I can help with refunds. Please share your Order ID.",
-    "payment": "Please tell me your payment issue.",
-    "bye": "Thank you for contacting us. Have a nice day!"
-}
+# Load intents
+INTENTS_FILE = os.path.join("data", "intents.json")
+
+def load_intents():
+    if os.path.exists(INTENTS_FILE):
+        with open(INTENTS_FILE, "r") as file:
+            return json.load(file)
+    return {"intents": []}
 
 @app.route("/")
 def home():
@@ -17,16 +19,20 @@ def home():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    message = request.json.get("message", "").lower()
+    user_message = request.json.get("message", "").lower()
 
-    reply = "Sorry, I don't understand. Please contact our support team."
+    intents = load_intents()
 
-    for key in responses:
-        if key in message:
-            reply = responses[key]
-            break
+    for intent in intents["intents"]:
+        for pattern in intent["patterns"]:
+            if pattern.lower() in user_message:
+                return jsonify({
+                    "response": intent["responses"][0]
+                })
 
-    return jsonify({"response": reply})
+    return jsonify({
+        "response": "Sorry, I couldn't understand your question. Please try again."
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)
