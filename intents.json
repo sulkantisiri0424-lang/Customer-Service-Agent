@@ -294,3 +294,54 @@
     "I'm sorry, I couldn't understand your request. Could you please rephrase it?"
   ]
 }
+,
+{
+  "tag": "payment",
+  "patterns": [
+    "payment",
+    "pay",
+    "payment methods",
+    "online payment"
+  ],
+  "responses": [
+    "We support multiple payment methods. Please contact our support team for details."
+  ]
+},
+{
+  "tag": "refund",
+  "patterns": [
+    "refund",
+    "money back",
+    "cancel payment",
+    "refund policy"
+  ],
+  "responses": [
+    "Refund requests are handled according to Zetheta's refund policy."
+  ]
+},
+{
+  "tag": "feedback",
+  "patterns": [
+    "feedback",
+    "review",
+    "suggestion",
+    "complaint"
+  ],
+  "responses": [
+    "Thank you for your feedback. We appreciate your valuable suggestions."
+  ]
+},
+{
+  "tag": "help",
+  "patterns": [
+    "help me",
+    "need help",
+    "assist me",
+    "support me"
+  ],
+  "responses": [
+    "Sure! Please tell me your question and I'll do my best to help."
+  ]
+}
+  ]
+}
