@@ -197,3 +197,100 @@
     "We provide cloud consulting, deployment, and support services."
   ]
 }
+,
+{
+  "tag": "web_development",
+  "patterns": [
+    "web development",
+    "website",
+    "web application",
+    "build website"
+  ],
+  "responses": [
+    "We provide professional website and web application development services."
+  ]
+},
+{
+  "tag": "mobile_app",
+  "patterns": [
+    "mobile app",
+    "android app",
+    "ios app",
+    "application development"
+  ],
+  "responses": [
+    "We develop Android, iOS and cross-platform mobile applications."
+  ]
+},
+{
+  "tag": "data_science",
+  "patterns": [
+    "data science",
+    "data analytics",
+    "big data",
+    "data analysis"
+  ],
+  "responses": [
+    "Our team provides data science and analytics solutions."
+  ]
+},
+{
+  "tag": "cyber_security",
+  "patterns": [
+    "cyber security",
+    "security",
+    "network security",
+    "data protection"
+  ],
+  "responses": [
+    "We provide cybersecurity consulting and security solutions."
+  ]
+},
+{
+  "tag": "software_testing",
+  "patterns": [
+    "testing",
+    "software testing",
+    "qa",
+    "quality assurance"
+  ],
+  "responses": [
+    "We provide manual and automated software testing services."
+  ]
+},
+{
+  "tag": "database",
+  "patterns": [
+    "database",
+    "sql",
+    "mysql",
+    "sqlite"
+  ],
+  "responses": [
+    "We work with SQL, MySQL, SQLite and other database technologies."
+  ]
+},
+{
+  "tag": "farewell",
+  "patterns": [
+    "see you later",
+    "catch you later",
+    "have a nice day",
+    "bye bye"
+  ],
+  "responses": [
+    "Thank you for choosing Zetheta. Have a wonderful day!"
+  ]
+},
+{
+  "tag": "default",
+  "patterns": [
+    "random question",
+    "i don't know",
+    "something else",
+    "other"
+  ],
+  "responses": [
+    "I'm sorry, I couldn't understand your request. Could you please rephrase it?"
+  ]
+}
