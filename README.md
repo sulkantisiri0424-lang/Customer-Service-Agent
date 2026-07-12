@@ -1,32 +1,75 @@
-# Customer Service Agent
+# Zetheta Customer Service Agent
 
-## Overview
-This is an AI-powered Customer Service Agent developed using Python and Flask.
+## Project Overview
+Zetheta Customer Service Agent is an offline AI chatbot built using Flask and SQLite. It provides instant responses to customer queries through a simple web interface.
 
 ## Features
-- Customer query handling
-- Intent recognition
-- FAQ support
-- Order tracking
-- Refund assistance
-- Product recommendations
-- Multi-turn conversations
-- Safety guardrails
+
+- Offline chatbot
+- Flask backend
+- SQLite database
+- Customer chat interface
+- Chat history
+- Analytics dashboard
+- Admin login page
+- TF-IDF + Scikit-learn support
+- 25+ chatbot intents
+- Responsive UI
 
 ## Technologies Used
+
 - Python
 - Flask
+- SQLite
 - HTML
 - CSS
 - JavaScript
 - Scikit-learn
+- Joblib
 
-## How to Run
-1. Install Python.
-2. Install dependencies:
-   pip install -r requirements.txt
-3. Run:
-   python app.py
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the database:
+
+```bash
+python database.py
+```
+
+Train the chatbot:
+
+```bash
+python train.py
+```
+
+Run the application:
+
+```bash
+python app.py
+```
+
+Open your browser:
+
+```
+http://127.0.0.1:5000
+```
+
+## Project Structure
+
+```
+app.py
+chatbot.py
+database.py
+train.py
+intents.json
+templates/
+static/
+README.md
+```
 
 ## Author
-Siri Vennela
+
+Developed for the Zetheta Internship Project.
