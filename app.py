@@ -83,6 +83,28 @@ def analytics():
         "total_chats": total_chats,
         "total_feedback": total_feedback
     })
+@app.route("/feedback", methods=["POST"])
+def feedback():
+
+    data = request.get_json()
+
+    rating = data.get("rating")
+    comments = data.get("comments")
+
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "INSERT INTO feedback (rating, comments) VALUES (?, ?)",
+        (rating, comments)
+    )
+
+    conn.commit()
+    conn.close()
+
+    return jsonify({
+        "message": "Feedback submitted successfully."
+    })
 
 
 if __name__ == "__main__":
