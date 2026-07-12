@@ -1,17 +1,21 @@
 from flask import Flask, render_template, request, jsonify
-import json
-import os
+from chatbot import get_response
+import sqlite3
+from database import create_database
 
 app = Flask(__name__)
 
-# Load intents
-INTENTS_FILE = os.path.join("data", "intents.json")
+create_database()
 
-def load_intents():
-    if os.path.exists(INTENTS_FILE):
-        with open(INTENTS_FILE, "r") as file:
-            return json.load(file)
-    return {"intents": []}
+def save_chat(user_message, bot_response):
+    conn = sqlite3.connect("customer_service.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO chat_history (user_message, bot_response) VALUES (?, ?)",
+        (user_message, bot_response)
+    )
+    conn.commit()
+    conn.close()
 
 @app.route("/")
 def home():
@@ -19,20 +23,10 @@ def home():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    user_message = request.json.get("message", "").lower()
-
-    intents = load_intents()
-
-    for intent in intents["intents"]:
-        for pattern in intent["patterns"]:
-            if pattern.lower() in user_message:
-                return jsonify({
-                    "response": intent["responses"][0]
-                })
-
-    return jsonify({
-        "response": "Sorry, I couldn't understand your question. Please try again."
-    })
+    user_message = request.json.get("message", "")
+    bot_response = get_response(user_message)
+    save_chat(user_message, bot_response)
+    return jsonify({"response": bot_response})
 
 if __name__ == "__main__":
     app.run(debug=True)
