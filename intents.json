@@ -8,7 +8,8 @@
         "hey",
         "good morning",
         "good evening",
-        "hii"
+        "hii",
+        "how are you"
       ],
       "responses": [
         "Hello! Welcome to Zetheta Customer Service. How can I help you today?"
@@ -32,8 +33,8 @@
       "patterns": [
         "thanks",
         "thank you",
-        "thank you so much",
-        "thanks a lot"
+        "thanks a lot",
+        "thank you so much"
       ],
       "responses": [
         "You're welcome! Happy to help."
@@ -44,8 +45,8 @@
       "patterns": [
         "about zetheta",
         "who are you",
-        "company details",
-        "about company"
+        "about company",
+        "company details"
       ],
       "responses": [
         "Zetheta is a technology company providing AI and software solutions."
@@ -54,14 +55,48 @@
     {
       "tag": "services",
       "patterns": [
-        "what services do you provide",
         "services",
         "products",
+        "what services do you provide",
         "offerings"
       ],
       "responses": [
-        "We provide AI solutions, software development, cloud services, and technical support."
+        "We provide AI, software development, cloud solutions and technical support."
+      ]
+    },
+    {
+      "tag": "internship",
+      "patterns": [
+        "internship",
+        "internships",
+        "training",
+        "internship details"
+      ],
+      "responses": [
+        "You can visit the Careers section to know about internship opportunities."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "contact",
+        "phone number",
+        "email",
+        "customer support"
+      ],
+      "responses": [
+        "You can contact Zetheta through the official email or website."
+      ]
+    },
+    {
+      "tag": "location",
+      "patterns": [
+        "where are you",
+        "office",
+        "location",
+        "address"
+      ],
+      "responses": [
+        "Please visit the official website for the latest office address."
       ]
     }
-  ]
-}
