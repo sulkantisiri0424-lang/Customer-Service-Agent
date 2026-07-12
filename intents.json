@@ -1,0 +1,67 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "good morning",
+        "good evening",
+        "hii"
+      ],
+      "responses": [
+        "Hello! Welcome to Zetheta Customer Service. How can I help you today?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "exit",
+        "quit"
+      ],
+      "responses": [
+        "Thank you for contacting Zetheta. Have a great day!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "thank you so much",
+        "thanks a lot"
+      ],
+      "responses": [
+        "You're welcome! Happy to help."
+      ]
+    },
+    {
+      "tag": "about_company",
+      "patterns": [
+        "about zetheta",
+        "who are you",
+        "company details",
+        "about company"
+      ],
+      "responses": [
+        "Zetheta is a technology company providing AI and software solutions."
+      ]
+    },
+    {
+      "tag": "services",
+      "patterns": [
+        "what services do you provide",
+        "services",
+        "products",
+        "offerings"
+      ],
+      "responses": [
+        "We provide AI solutions, software development, cloud services, and technical support."
+      ]
+    }
+  ]
+}
