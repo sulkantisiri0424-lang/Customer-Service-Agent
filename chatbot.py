@@ -1,15 +1,35 @@
 import json
 import random
+import joblib
+import os
+
+MODEL_FILE = "chatbot_model.pkl"
+VECTORIZER_FILE = "vectorizer.pkl"
 
 with open("intents.json", "r") as file:
-    data = json.load(file)
+    intents = json.load(file)
 
-def get_response(user_input):
-    user_input = user_input.lower()
+model = None
+vectorizer = None
 
-    for intent in data["intents"]:
-        for pattern in intent["patterns"]:
-            if pattern.lower() in user_input:
+if os.path.exists(MODEL_FILE) and os.path.exists(VECTORIZER_FILE):
+    model = joblib.load(MODEL_FILE)
+    vectorizer = joblib.load(VECTORIZER_FILE)
+
+
+def get_response(message):
+    message = message.lower()
+
+    if model and vectorizer:
+        prediction = model.predict(vectorizer.transform([message]))[0]
+
+        for intent in intents["intents"]:
+            if intent["tag"] == prediction:
                 return random.choice(intent["responses"])
 
-    return "Sorry, I couldn't understand your question. Please try asking in a different way."
+    for intent in intents["intents"]:
+        for pattern in intent["patterns"]:
+            if pattern.lower() in message:
+                return random.choice(intent["responses"])
+
+    return "Sorry, I couldn't understand your question."
