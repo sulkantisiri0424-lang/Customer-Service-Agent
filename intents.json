@@ -100,3 +100,100 @@
         "Please visit the official website for the latest office address."
       ]
     }
+,
+{
+  "tag": "pricing",
+  "patterns": [
+    "pricing",
+    "price",
+    "cost",
+    "fees"
+  ],
+  "responses": [
+    "Pricing depends on the service. Please contact Zetheta for the latest pricing details."
+  ]
+},
+{
+  "tag": "support",
+  "patterns": [
+    "technical support",
+    "help",
+    "issue",
+    "problem"
+  ],
+  "responses": [
+    "Our support team is here to help. Please describe your issue."
+  ]
+},
+{
+  "tag": "working_hours",
+  "patterns": [
+    "working hours",
+    "office timings",
+    "business hours",
+    "when are you open"
+  ],
+  "responses": [
+    "Our support team is available during standard business hours."
+  ]
+},
+{
+  "tag": "career",
+  "patterns": [
+    "career",
+    "jobs",
+    "vacancies",
+    "hiring"
+  ],
+  "responses": [
+    "Please visit the Careers page on the official Zetheta website for current openings."
+  ]
+},
+{
+  "tag": "courses",
+  "patterns": [
+    "courses",
+    "training programs",
+    "certification",
+    "learning"
+  ],
+  "responses": [
+    "Zetheta offers various learning and training opportunities. Check the official website for details."
+  ]
+},
+{
+  "tag": "projects",
+  "patterns": [
+    "projects",
+    "project details",
+    "live projects",
+    "major projects"
+  ],
+  "responses": [
+    "Zetheta works on AI, software development, cloud computing, and automation projects."
+  ]
+},
+{
+  "tag": "ai_services",
+  "patterns": [
+    "artificial intelligence",
+    "ai services",
+    "machine learning",
+    "deep learning"
+  ],
+  "responses": [
+    "We provide AI and Machine Learning based software solutions."
+  ]
+},
+{
+  "tag": "cloud_services",
+  "patterns": [
+    "cloud",
+    "cloud services",
+    "aws",
+    "azure"
+  ],
+  "responses": [
+    "We provide cloud consulting, deployment, and support services."
+  ]
+}
