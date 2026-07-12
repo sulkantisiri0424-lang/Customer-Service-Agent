@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat History</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="chat-container">
+
+<h2>Chat History</h2>
+
+<table border="1" width="100%" cellpadding="8">
+
+<tr>
+<th>User Message</th>
+<th>Bot Response</th>
+</tr>
+
+{% for chat in chats %}
+
+<tr>
+<td>{{ chat[0] }}</td>
+<td>{{ chat[1] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">⬅ Back to Chat</a>
+
+</div>
+
+</body>
+</html>
